@@ -1,4 +1,5 @@
 # crypto/rubix-cube
+Tags: cyber-academy, week 9, modern-cryptography 2024
 
 We are presented with the following code:
 
@@ -54,7 +55,7 @@ With the Rivest-Shamir-Adleman (RSA) algorithm, a key is encrypted with the use 
 (m^e)^d % n = message
 
 ## Method to solve CTF
-This code performs RSA with an exponent of 3, making it a small exponent that can be solved by simply using a cube root. By identifying the value of the exponent, we notice that the message can be recovered simply by taking the cube root of the printed value. 
+I notice that if the exponent of the message is a small enough number, the nth root of the encrypted message can simply be taken to find the original message. This code performs RSA with an exponent of 3, making it a small exponent that can be solved by simply using a cube root. By identifying the value of the exponent, we notice that the message can be recovered simply by taking the cube root of the printed value. 
 
 I used the function find_invpow which finds the nth root of a number. Using this function to take the cube root of the encrypted message, I converted the returned long value to bytes:
 
